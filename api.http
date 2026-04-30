@@ -1,4 +1,25 @@
-GET http://localhost:8000/products/ HTTP/1.1
+GET http://localhost:8000/products/?name__icontains=tel HTTP/1.1
+
+###
+
+GET http://localhost:8000/products/2/ HTTP/1.1
+
+###
+
+
+DELETE  http://localhost:8000/products/1/ HTTP/1.1
+
+###
+
+PUT  http://localhost:8000/products/2/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Television",
+    "price": 300.00,
+    "stock": 14,
+    "description": "An amazing new TV"
+}
 
 ###
 
@@ -30,3 +51,20 @@ Content-Type: application/json
 
 GET   http://localhost:8000/user-orders/ HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3Mzk4ODUwLCJpYXQiOjE3NzczOTg1NTAsImp0aSI6ImM3NWQ4MjlmNWVmZjRiYjg5NDkzNDVhYTczOWI0MTAyIiwidXNlcl9pZCI6IjIifQ.tyhvBvc1J3HbRa_lzp7Xz4mGrKaOIkoOrC2jLQHZBSw
+
+
+### 
+
+POST  http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NzUzNzkyNywiaWF0IjoxNzc3NDUxNTI3LCJqdGkiOiI4NjM3ZTIxN2M5NWU0MTYzYjJlZDRhZmJlNWY5ZTQ4MiIsInVzZXJfaWQiOiIyIn0.G9oFZef5faR4ow3JEaIJLiwHvf63y_tkJWYZOoDe3cU"
+}
+
+
+###
+
+GET  http://localhost:8000/orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NTU5OTAyLCJpYXQiOjE3Nzc1NTk2MDIsImp0aSI6Ijk5MWYwNTE1ZWViZTQ4ZTI4OGZlMDVlNTJlZTc0NjUzIiwidXNlcl9pZCI6IjIifQ.n-l_B4w7uO9WdGhQ4EFNRKE20IrnQ8LWp80ojDEfoUE
