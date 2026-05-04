@@ -74,7 +74,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 POST   http://localhost:8000/orders/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NjE3NzAwLCJpYXQiOjE3Nzc2MTc0MDAsImp0aSI6IjYyOGJiZTM4ZTE1NDQxZmVhMmE3ZDE2ZDY4ZTUzY2Y1IiwidXNlcl9pZCI6IjIifQ.q33FvZkDbGPP67S5FH1TVmGpNtZcNTeY77mB1ibD3BQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NzIxMTkwLCJpYXQiOjE3Nzc3MTc1OTAsImp0aSI6ImM1YTQ2YzQ2ZmU2MzRiOTI5OTkxOWYxNmY0MGEzNDlmIiwidXNlcl9pZCI6IjIifQ.1A5HdUu9yBoZMMMmCAr2cogI10UsV9W-TUQqroKXFpQ
 
 {
     "status": "pending",
@@ -115,3 +115,32 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 
 DELETE    http://localhost:8000/orders/f185c764-382c-4a1d-93d5-f726a43dda3b/ HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NjIwMDIwLCJpYXQiOjE3Nzc2MTk3MjAsImp0aSI6ImVlZjdjYTg3MDgxYTRkZDViNjMzNTY0MjI4N2EwODg2IiwidXNlcl9pZCI6IjIifQ.7lBAZlJlOcKLpPlkLdpJdm7rQn_HRABt8ZkMCcm9fBs
+
+
+###
+GET  http://localhost:8000/users/ HTTP/1.1
+
+
+
+### 
+GET  http://localhost:8000/auth/users/me/ HTTP/1.1
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3ODIyNjc4LCJpYXQiOjE3Nzc4MTkwNzksImp0aSI6IjlhODFjODJkNjJjNTRmODFhY2M5ZDMwYWFhNGI0MzAzIiwidXNlcl9pZCI6IjIifQ.-wURH2VOSMLsvXdtho4fuK0YmxXjvz2fFdTRC-vAyVw
+
+
+
+###
+
+POST http://localhost:8000/auth/jwt/create/ HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "username": "Hari",
+    "password": "1234567890"
+}
+
+
+###
+
+POST http://localhost:8000/auth/token/logout/ HTTP/1.1
+Authorization: Token ad72f3765e829fbf1ada96643bb1dd0a29a4043d
